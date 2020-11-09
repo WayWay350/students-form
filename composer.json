@@ -1,0 +1,9 @@
+// add composer
+{
+    "require-dev": {
+        "symfony/var-dumper": "^5.1"
+    },
+    "require": {
+        "fzaninotto/faker": "^1.9"
+    }
+}

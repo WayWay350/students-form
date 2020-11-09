@@ -19,6 +19,7 @@ class Students_model extends Model
 	function add_Students($data){
 		#sql request to db
 		$stmt = $this->db->prepare("INSERT INTO students(id, name, age, sex, grou, faculty) VALUES (:id, :name, :age, :sex, :grou, :faculty)");
+		#isnser array new records from form
 		$stmt->execute(array(
 			'id'=> NULL,
 			'name'=>$data['name'],
@@ -32,6 +33,7 @@ class Students_model extends Model
 	function delete_Students($id){
 		#sql request to db
 		$stmt = $this->db->prepare("DELETE FROM students WHERE id = :id");
+		#delete one record from db
 		$stmt->execute(['id' =>$id]);
 	}
 	#method for take sudent`s id
@@ -39,15 +41,14 @@ class Students_model extends Model
 		#sql request to db
 		$stmt = $this->db->prepare("SELECT * FROM students WHERE id = :id");
 		$stmt->execute(['id' => $id]);
-		#return array with record
+		#take one record from db to id
 		return $stmt->fetchAll();
-		var_dump($id);
 	}
 	#method for change one records in db
 	function change_Students($data){
 		#sql request to db
 		$stmt = $this->db->prepare("UPDATE students SET name = :name, age = :age, sex = :sex, grou = :grou, faculty = :faculty WHERE id = :id");
-		#add to database
+		#take array`s records from db
 		$stmt->execute(array(
 			'id'=>$data['id'],
 			'name'=>$data['name'],

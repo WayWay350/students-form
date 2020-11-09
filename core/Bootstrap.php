@@ -50,21 +50,3 @@ if(empty($url[0])){
 
 
   }
-
-// if(!empty($url[2])){
-// 	if(method_exists($controllers, $url[1])){
-// 		$controllers->{$url[1]}($url[2]);
-// 	}else{
-// 		$controllers->index();
-// 	}
-// }else{
-// 	if(!empty($url[1])){
-// 		if(method_exists($controllers, $url[1])){
-// 			$controllers->{$url[1]}();
-// 		}else{
-// 			$controllers->index();
-// 		}
-// 	}else{
-// 		$controllers->index();
-// 	}
-// }

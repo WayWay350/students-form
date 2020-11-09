@@ -8,6 +8,7 @@ class Index extends Controller
 		parent:: __construct();
 	}
 	function index(){
+		#chek metod render
 		$this->view->render('index/index');
 	}
 }

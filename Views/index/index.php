@@ -9,6 +9,5 @@
 <tr><td style=" text-align: center; background-color: #DCDCDC"><a  style="text-decoration: none; color: black"  href="<?php echo URL?>students/students">База студентів</a></td></tr>
 <tr><td style="text-align: center; background-color: #DCDCDC"><a  style="text-decoration: none; color: black " href="<?php echo URL?>students/addbase">Добавити студента</a></td></tr>
 </table>
-
 </body>
 </html>

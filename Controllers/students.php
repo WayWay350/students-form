@@ -3,12 +3,14 @@
 #creat a controller that extends the main controller
 class Students extends Controller
 {
+	#check conrstruct from main controller
 	function __construct()
 	{
 		parent:: __construct();
 	}
 	#method of show the student base. check model and use class view
 	function students(){
+		#use method from models.
 		$this->model->show_Students();
 		$this->view->render('index/hello', $this->model->answer);
 		#audit for button
@@ -24,6 +26,7 @@ class Students extends Controller
 	}
 	#method to add to the database. check model and use class view
 	function addbase(){
+		#check inputs
 		if(!empty($_POST['name']) && !empty($_POST['age']) && !empty($_POST['sex']) && !empty($_POST['group']) && !empty($_POST['faculty'])){
 			if($_POST['sex'] === 'male' || $_POST['sex'] === 'female'){
 				$this->model->add_Students($_POST);
@@ -48,11 +51,13 @@ class Students extends Controller
 	#method to delete from the base. check model and use class view
 	function delbase($value){
 		if($this->model->delete_Students($value[0]) ==! true){
+			#if false redirect to students list
 			header('location: http://base/students/students');
 		}
 	}
 	#method to edit base. check model and use class view
 	function upgrade($value){
+		
 		if(!empty($_POST['name']) && !empty($_POST['age']) && !empty($_POST['sex']) && !empty($_POST['group']) && !empty($_POST['faculty'])){
 			if($_POST['sex'] == 'male' || $_POST['sex'] == 'female'){
 				$this->model->change_Students($_POST);
